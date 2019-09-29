@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../cssfinal.css">
+  <link rel="stylesheet" type="text/css" href="../static/cssfinal.css">
+</head>
+<body>
+
+<div class="messaging">
+  <div class="inbox_msg">
+    <div class="mesgs">
+      <div class="msg_history">
+        <div class="incoming_msg">
+          <!-- <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>Test which is a new approach to have all
+                solutions</p>
+              <span class="time_date"> 11:01 AM    |    June 9</span></div>
+          </div> -->
+        </div>
+        <div class="outgoing_msg">
+          <div class="sent_msg">
+            <div id="chatbox">
+              <div class="botText"></div>
+            </div>
+            <!-- chatbox msg above -->
+
+            <!-- <span class="time_date"> 11:01 AM    |    June 9</span> -->
+          </div>
+        </div>
+        <!-- <div class="incoming_msg">
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>Test, which is a new approach to have</p>
+              <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+          </div>
+        </div> -->
+        <!-- <div class="outgoing_msg">
+          <div class="sent_msg">
+            <p>Apollo University, Delhi, India Test</p>
+            <span class="time_date"> 11:01 AM    |    Today</span> </div>
+        </div> -->
+        <!-- <div class="incoming_msg">
+          <div class="received_msg">
+            <div class="received_withd_msg">
+              <p>We work directly with our designers and suppliers,
+                and sell direct to you, which means quality, exclusive
+                products, at a price anyone can afford.</p>
+              <span class="time_date"> 11:01 AM    |    Today</span></div>
+          </div>
+        </div> -->
+      </div>
+      <div class="type_msg">
+        <div class="input_msg_write">
+        <div id="userInput">
+            <!-- <input id="textInput" type="text" name="msg" placeholder="Message"> -->
+            <!-- <input id="buttonInput" type="submit" value="Send"> -->
+          <input type="text" class="write_msg" name="msg"  placeholder="Type a message" id="userInput" />
+          <button class="msg_send_btn" type="button" id="buttonInput"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+          <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<div class="userText"><span>' + rawText + '</span></div>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<div class="botText"><span>' +'Sakshi: '+ data + '</span></div>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13) {
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+          getBotResponse();
+        })
+      </script>
+
+
+
+
+
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+ 
